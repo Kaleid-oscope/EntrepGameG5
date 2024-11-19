@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxy50jt05h0ea"]
+
+[ext_resource type="Script" path="res://script/menu_screen.gd" id="1_n7yua"]
+[ext_resource type="Texture2D" uid="uid://2xvurnsmgbmj" path="res://Menu Screen/Screenshot 2024-11-14 145841.png" id="2_bapem"]
+
+[sub_resource type="Theme" id="Theme_sw5wc"]
+
+[sub_resource type="SystemFont" id="SystemFont_8k5ek"]
+
+[node name="MenuScreen" type="Node2D"]
+script = ExtResource("1_n7yua")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Screenshot2024-11-14145841" type="Sprite2D" parent="Control"]
+position = Vector2(575.75, 322.5)
+scale = Vector2(0.939951, 0.9375)
+texture = ExtResource("2_bapem")
+
+[node name="Start" type="Button" parent="Control"]
+offset_left = 383.0
+offset_top = 222.0
+offset_right = 774.0
+offset_bottom = 327.0
+theme = SubResource("Theme_sw5wc")
+theme_override_colors/font_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = SubResource("SystemFont_8k5ek")
+
+[node name="Exit" type="Button" parent="Control"]
+z_index = -1
+offset_left = 93.0
+offset_top = 426.0
+offset_right = 275.0
+offset_bottom = 582.0
+
+[connection signal="pressed" from="Control/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Control/Exit" to="." method="_on_exit_pressed"]
